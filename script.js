@@ -21,20 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.classList.add('fa-sun');
     }
 
-    // Maneja el cambio del tema
-    themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
     // Cargar datos guardados si existen
     if (localStorage.getItem('rememberMe') === 'true') {
         usernameInput.value = localStorage.getItem('username');
