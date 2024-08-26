@@ -136,57 +136,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        // Verifica si el contenedor existe
-        const container = document.querySelector('#yourContainerId'); // Cambia #yourContainerId por el ID real
-    
-        if (container) {
-            container.addEventListener('click', (event) => {
-                const subjectDiv = event.target.closest('.subject');
-                const newTaskDiv = event.target.closest('.new-task');
-                const contentDiv = event.target.closest('.content');
-    
-                if (subjectDiv) {
-                    const tasksContainer = subjectDiv.nextElementSibling;
-                    const chevronIcon = subjectDiv.querySelector('.fas.fa-chevron-down');
-    
-                    tasksContainer.style.display = tasksContainer.style.display === 'none' || tasksContainer.style.display === '' ? 'block' : 'none';
-                    chevronIcon.classList.toggle('rotate-up', tasksContainer.style.display === 'block');
-                }
-    
-                if (newTaskDiv) {
-                    const inChargerContainer = newTaskDiv.nextElementSibling;
-                    const chevronIcon = newTaskDiv.querySelector('.fas.fa-chevron-down');
-    
-                    inChargerContainer.style.display = inChargerContainer.style.display === 'none' || inChargerContainer.style.display === '' ? 'block' : 'none';
-                    chevronIcon.classList.toggle('rotate-up', inChargerContainer.style.display === 'block');
-                }
-    
-                if (contentDiv) {
-                    // Solo proceder si el contenido es clickeable
-                    if (contentDiv.style.pointerEvents === 'none') return; // Si pointerEvents es none, no hacer nada
-    
-                    const handInHomeworkDiv = contentDiv.nextElementSibling;
-                    const chevronIcon = contentDiv.querySelector('.fas.fa-chevron-down');
-                    const inChargerDiv = contentDiv.parentElement;
-    
-                    handInHomeworkDiv.style.display = handInHomeworkDiv.style.display === 'none' || handInHomeworkDiv.style.display === '' ? 'block' : 'none';
-                    chevronIcon.classList.toggle('rotate-up', handInHomeworkDiv.style.display === 'block');
-                    // Cambiar el color de fondo según el tema
-                    const isDarkMode = document.body.classList.contains('dark-mode');
-                    const bgColor = handInHomeworkDiv.style.display === 'block'
-                        ? (isDarkMode ? '#111111' : '#e0e0e0') // Gris oscuro en modo oscuro, gris claro en modo claro
-                        : '';
-    
-                    inChargerDiv.style.backgroundColor = bgColor;
-                }
-            });
-        } else {
-            console.error('Elemento con el ID #yourContainerId no encontrado');
+    // Mostrar/ocultar contenido y cambiar íconos en subject
+    container.addEventListener('click', (event) => {
+        const subjectDiv = event.target.closest('.subject');
+        const newTaskDiv = event.target.closest('.new-task');
+        const contentDiv = event.target.closest('.content');
+
+        if (subjectDiv) {
+            const tasksContainer = subjectDiv.nextElementSibling;
+            const chevronIcon = subjectDiv.querySelector('.fas.fa-chevron-down');
+
+            tasksContainer.style.display = tasksContainer.style.display === 'none' || tasksContainer.style.display === '' ? 'block' : 'none';
+            chevronIcon.classList.toggle('rotate-up', tasksContainer.style.display === 'block');
+        }
+
+        if (newTaskDiv) {
+            const inChargerContainer = newTaskDiv.nextElementSibling;
+            const chevronIcon = newTaskDiv.querySelector('.fas.fa-chevron-down');
+
+            inChargerContainer.style.display = inChargerContainer.style.display === 'none' || inChargerContainer.style.display === '' ? 'block' : 'none';
+            chevronIcon.classList.toggle('rotate-up', inChargerContainer.style.display === 'block');
+        }
+
+        if (contentDiv) {
+            // Solo proceder si el contenido es clickeable
+            if (contentDiv.style.pointerEvents === 'none') return; // Si pointerEvents es none, no hacer nada
+
+            const handInHomeworkDiv = contentDiv.nextElementSibling;
+            const chevronIcon = contentDiv.querySelector('.fas.fa-chevron-down');
+            const inChargerDiv = contentDiv.parentElement;
+
+            handInHomeworkDiv.style.display = handInHomeworkDiv.style.display === 'none' || handInHomeworkDiv.style.display === '' ? 'block' : 'none';
+            chevronIcon.classList.toggle('rotate-up', handInHomeworkDiv.style.display === 'block');
+            // Cambiar el color de fondo según el tema
+            const isDarkMode = body.classList.contains('dark-mode');
+            const bgColor = handInHomeworkDiv.style.display === 'block'
+                ? (isDarkMode ? '#111111' : '#e0e0e0') // Gris oscuro en modo oscuro, gris claro en modo claro
+                : '';
+
+            inChargerDiv.style.backgroundColor = bgColor;
         }
     });
-    
-
 });
 
 function handleError(error) {
