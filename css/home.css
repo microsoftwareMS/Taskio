@@ -126,6 +126,12 @@ h2 {
     margin-top: 10px;
 }
 
+.txt-date {
+    width: 50%;
+    font-weight: 600;
+    text-align: right;
+}
+
 .subject, 
 .new-task,
 .content {
@@ -183,9 +189,9 @@ h3 {
 }
 
 .new-task span {
-    width: 100%;
-    text-align: right;
-    margin-right: 20px;
+    margin-left: 15px;
+    margin-right: 25px;
+    font-weight: 300;
 }
 
 .hand-in-homework {
