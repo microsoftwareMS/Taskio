@@ -388,7 +388,7 @@ async function renderSubjects() {
                                                 <p id="count-charger-pe">${task.inCharge.filter(charger => charger.state === 'Pendiente').length}</p>
                                                 <p id="count-charger-ne">${task.inCharge.filter(charger => charger.state === 'Necesita Corrección').length}</p>
                                             </div>
-                                            <span id="date">${formatDateTime(task.dueDate)}</span>
+                                            <label class="txt-date">Fecha de Entrega:<span id="date">${formatDateTime(task.dueDate)}</span></label>
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                         <div class="in-charger-container" style="display: none;">
