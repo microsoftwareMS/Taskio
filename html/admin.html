@@ -104,6 +104,15 @@
             document.body.removeChild(a); // Limpia el DOM después de la descarga
         }
 
+        window.onload = function() {
+            // Verifica si la bandera está establecida
+            if (sessionStorage.getItem('hasVisitedIndex') === 'true') {
+            } else {
+                // Redirige a index.html si no se ha visitado la página de inicio
+                window.location.href = '../index.html';
+            }
+        };
+
     </script>
     <script type="module" src="../js/admin.js"></script>
     <script type="module" src="../js/adminfirebase.js"></script>
