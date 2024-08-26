@@ -36,6 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.task-subject-container');
     const themeToggleButton = document.getElementById('theme-toggle');
     const body = document.body;
+
+    // Cambiar el tema cuando se haga clic en el botón
+    themeToggleButton.addEventListener('click', () => {
+        const isDarkMode = body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        const inChargerElements = document.querySelectorAll('.in-charger');
+        inChargerElements.forEach(inChargerDiv => {
+            const handInHomeworkDiv = inChargerDiv.querySelector('.hand-in-homework');
+            const bgColor = handInHomeworkDiv && handInHomeworkDiv.style.display === 'block'
+                ? (isDarkMode ? '#111111' : '#e0e0e0')
+                : '';
+            inChargerDiv.style.backgroundColor = bgColor;
+        });
+    });
     
 
     // Handling user login as User
