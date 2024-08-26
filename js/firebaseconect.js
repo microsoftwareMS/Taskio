@@ -41,12 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         body.classList.toggle('dark-mode', savedTheme === 'dark');
+        themeIcon.classList.toggle('fa-moon', savedTheme === 'dark');
+        themeIcon.classList.toggle('fa-sun', savedTheme !== 'dark');
     }
 
     // Cambiar el tema cuando se haga clic en el botón
     themeToggleButton.addEventListener('click', () => {
         const isDarkMode = body.classList.toggle('dark-mode');
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        themeIcon.classList.toggle('fa-moon', isDarkMode);
+        themeIcon.classList.toggle('fa-sun', !isDarkMode);
+
+        // Actualizar el fondo de los elementos 'in-charger'
         const inChargerElements = document.querySelectorAll('.in-charger');
         inChargerElements.forEach(inChargerDiv => {
             const handInHomeworkDiv = inChargerDiv.querySelector('.hand-in-homework');
