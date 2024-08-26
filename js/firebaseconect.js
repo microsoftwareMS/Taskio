@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
     const body = document.body;
 
+    // Cargar el tema preferido del localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.toggle('dark-mode', savedTheme === 'dark');
+    }
+
     // Cambiar el tema cuando se haga clic en el botón
     themeToggleButton.addEventListener('click', () => {
         const isDarkMode = body.classList.toggle('dark-mode');
