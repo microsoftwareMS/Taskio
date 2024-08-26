@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutBtn = document.getElementById('logoutBtn');
     const usernameSpan = document.getElementById('username');
     const container = document.querySelector('.task-subject-container');
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
     
 
     // Handling user login as User
