@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.task-subject-container');
     const themeToggleButton = document.getElementById('theme-toggle');
     const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
 
     // Cargar el tema preferido del localStorage
     const savedTheme = localStorage.getItem('theme');
