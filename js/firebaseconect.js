@@ -372,7 +372,9 @@ async function renderSubjects() {
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="tasks-container" style="display: none;">
-                            ${subject.tasks ? Object.keys(subject.tasks).map((taskId) => {
+                            ${!subject.tasks || Object.keys(subject.tasks).length === 0 ? 
+                                '<p class="msg">No hay tareas agregadas.</p>' :
+                                subject.tasks ? Object.keys(subject.tasks).map((taskId) => {
                                 const task = subject.tasks[taskId];
                                 return `
                                     <div class="new-task-container">
