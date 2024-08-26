@@ -34,6 +34,16 @@
             <i id="theme-icon" class="fas fa-sun"></i>
         </button>
     </main>
+    <script>
+        window.onload = function() {
+            // Verifica si la bandera está establecida
+            if (sessionStorage.getItem('hasVisitedIndex') === 'true') {
+            } else {
+                // Redirige a index.html si no se ha visitado la página de inicio
+                window.location.href = '../index.html';
+            }
+        };
+    </script>
     <script type="module" src="../js/firebaseconect.js"></script>
 </body>
 </html>
