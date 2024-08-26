@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.form-container,
+.panel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.panel-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.signin {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 80%;
+    display: grid;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    overflow: hidden;
+}
+
+.input-field {
+    max-width: 360px;
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    background-color: #f0f0f0;
+    border-radius: 55px;
+    position: relative;
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+    transition: 0.5s;
+}
+
+.input-field input {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+.btn {
+    width: 150px;
+    height: 49px;
+    margin: 10px 0;
+    background-color: #1C3240;
+    border: none;
+    border-radius: 49px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: #182f3f;
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 200%;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(-45deg, #F27F1B 20%, #F27F1B 100%);
+    border-radius: 80%;
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+}
+
+.image,
+.logo-container {
+    position: absolute;
+}
+
+.image {
+    width: 60%;
+    top: 5%;
+    left: 15%;
+    transition: left 1.1s ease-in-out, top 1.1s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+.logo-container {
+    width: 50%;
+    top: 38%;
+    left: 25%;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.image-logo {
+    width: 100%;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 6;
+}
+
+.left-panel {
+    padding: 3rem 17% 2rem 12%;
+    pointer-events: all;
+}
+
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 15px;
+    background-color: #1C3240;
+    color: #fff;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #182f3f;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .login-container {
+    background-color: #191a1e;
+}
+
+body.dark-mode .input-field {
+    background-color: #121215;
+}
+
+body.dark-mode .input-field input {
+    color: #fff;
+}
+
+
+body.dark-mode #theme-toggle {
+    background-color: #1d3347;
+    color: #fff;
+}
+
+#theme-icon {
+    font-size: 20px;
+}
+
+.btn.clicked {
+    transform: scale(0.95);
+    background-color: #182f3f;
+}
+
+.checkbox-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checkbox-container label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+body.dark-mode .checkbox-container label {
+    color: #fff;
+}
+
+body.dark-mode .floating-div {
+    background-color: #191a1e;;
+}
+
+/* Moviles medianos */
+@media (min-width: 361px) and (max-width: 480px) {
+    .image {
+        top: 6%;
+        width: 70%;
+    }
+
+    .logo-container {
+        left: 20%;
+        top: 40%;
+    }
+
+    .image-logo {
+        width: 120%;
+    }
+
+    .input-field {
+        width: 100%;
+        height: 70px;
+    }
+
+    .input-field i {
+        line-height: 70px;
+        font-size: 1.2rem;
+    }
+
+    .input-field input {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 200px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+}
+  
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .image {
+        top: 5%;
+        width: 60%;
+    }
+
+    .logo-container {
+        left: 25%;
+        top: 40%;
+    }
+
+    .image-logo {
+        width: 100%;
+    }
+
+    .input-field {
+        max-width: 500px;
+        height: 100px;
+    }
+
+    .input-field i {
+        line-height: 100px;
+        font-size: 1.8rem;
+    }
+
+    .input-field input {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 300px;
+        height: 90px;
+        font-size: 30px;
+    }
+}
+  
+/* Tablets horizontales y pantallas pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .signin {
+        position: absolute;
+        top: 60%;
+        transform: translate(-90%, -50%);
+        left: 100%;
+        width: 50%;
+        transition: 1s 0.7s ease-in-out;
+        display: grid;
+        grid-template-columns: 1fr;
+        z-index: 5;
+    }
+
+    form {
+        padding: 0rem 5rem;
+        transition: all 0.2s 0.7s;
+    }
+
+    form.sign-in-form {
+        z-index: 2;
+    }
+
+    .input-field {
+        max-width: 380px;
+    }
+
+    .panels-container {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .login-container:before {
+        height: 2000px;
+        width: 2000px;
+        right: 40%;
+        transform: translate(-91%, -60%);
+        border-radius: 50%;
+    }
+      
+    .image {
+        top: 35%;
+        left: 5%;
+        width: 40%;
+    }
+      
+    .left-panel {
+        pointer-events: none;
+        padding: 3rem 17% 2rem 12%;
+    }
+
+    .logo-container {
+        left: 100%;
+        top: 30%;
+        transform: translate(-90%, -80%);
+        transition: 1s 0.7s ease-in-out;
+    }
+
+    .image-logo {
+        width: 50%;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+}
+  
+/* Laptops */
+@media (min-width: 1025px) {
+    .signin {
+        position: absolute;
+        top: 60%;
+        transform: translate(-90%, -50%);
+        left: 100%;
+        width: 50%;
+        transition: 1s 0.7s ease-in-out;
+        display: grid;
+        grid-template-columns: 1fr;
+        z-index: 5;
+    }
+
+    form {
+        padding: 0rem 5rem;
+        transition: all 0.2s 0.7s;
+    }
+
+    form.sign-in-form {
+        z-index: 2;
+    }
+
+    .input-field {
+        max-width: 380px;
+    }
+
+    .panels-container {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .login-container:before {
+        height: 2000px;
+        width: 2000px;
+        right: 40%;
+        transform: translate(-95%, -60%);
+        border-radius: 50%;
+    }
+      
+    .image {
+        top: 15%;
+        left: 5%;
+        width: 40%;
+    }
+      
+    .left-panel {
+        pointer-events: none;
+        padding: 3rem 17% 2rem 12%;
+    }
+
+    .logo-container {
+        left: 100%;
+        top: 30%;
+        transform: translate(-90%, -80%);
+        transition: 1s 0.7s ease-in-out;
+    }
+
+    .image-logo {
+        width: 50%;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+}
+
+/* Estilos para el contenedor de sombra */
+.floating-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro con opacidad */
+    width: 100%;
+    height: 100%;
+    display: none; /* Utilizar Flexbox */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para el div flotante */
+.floating-div {
+    background-color: #fff; /* Fondo blanco con 90% de opacidad */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra del div */
+    padding: 20px;
+    max-width: 700px; /* Ancho máximo del div flotante */
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 80%; /* Ancho del div flotante en relación al contenedor */
+    text-align: center; /* Centra el texto dentro del div flotante */
+}
+
+.floating-div h1 {
+    margin-left: 40%;
+    font-size: 25px;
+    border-left: 4px solid #3498db; /* Borde izquierdo de color */
+    width: 20%;
+}
+
+.floating-div p {
+    font-weight: 500;
+    margin: 15px;
+    color: #acacac;
+    font-size: 14px;
+}
+
+.floating-div img {
+    width: 25%;
+    margin-left: 35%;
+}
+
+.floating-div h2 {
+    font-weight: 700;
+    color: #073858;
+    font-size: 16px;
+}
+
+.profiles-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+}
+
+.profile-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    width: 25%;
+}
+
+.profile-option i {
+    font-size: 80px;
+    margin-right: 10px;
+    color: #3498db;;
+}
+
+.profile-option span {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-option button {
+    background-color: #1C3240;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.profile-option button:hover {
+    background-color: #182f3f;
+}
+

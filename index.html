@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+</head>
+<body>
+    <main class="login-container">
+        <div class="form-container">
+            <div class="signin">
+                <form id="login-form" action="#" class="sing-in-form" autocomplete="off">
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Recordar datos</label>
+                    </div>
+                    <input type="submit" value="Login" class="btn solid">
+                </form>
+            </div>
+        </div>
+        <div class="panel-container">
+            <div class="panel left-panel">
+                <div class="logo-container">
+                    <img src="img/logo.svg" class="image-logo" alt="1 Pic">
+                </div>
+                <img src="img/1stPic.svg" class="image" alt="2nd Pic">
+            </div>
+        </div>
+        <button id="theme-toggle" class="btn_theme">
+            <i id="theme-icon" class="fas fa-sun"></i>
+        </button>
+    </main>
+    <div class="floating-shadow">
+        <div id="floating-div" class="floating-div">
+            <h1>PERFILES</h1>
+            <p>Selecciona tu perfil para iniciar sesión en</p>
+            <img src="img/logo.svg" alt="">
+            <h2>Usuario, administrador</h2>
+            <div class="profiles-container">
+                <div class="profile-option">
+                    <i class="fas fa-user"></i>
+                    <span>Usuario</span>
+                    <button type="submit" id="user_login_admin_user">Ingresar</button>
+
+                </div>
+                <div class="profile-option">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Administrador</span>
+                    <button type="submit" id="user_login_admin_admin">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="js/firebaseconect.js"></script>
+</body>
+</html>

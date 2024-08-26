@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Asignación de Tareas</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../img/logo.svg" alt="Logo">
+            </div>
+            <div class="welcome">
+                <h1>Bienvenido, <span id="username">Usuario</span> admin</h1>
+                <button type="submit" id="logoutBtn">Salir</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="admin-container">
+            <h1>Administrador - Asignación de Tareas</h1>
+            <div class="forms-container">
+                <!-- Formulario para agregar materia -->
+                <div class="form-container">
+                    <h2>Agregar Materia</h2>
+                    <input type="text" id="subjectName" placeholder="Nombre de la materia" autocomplete="off">
+                    <button id="addSubjectButton" type="submit">Agregar Materia</button>
+                    <h2>Eliminar Materia</h2>
+                    <select id="deleteSubjectSelect">
+                        <option value="">Selecciona una materia</option>
+                    </select>
+                    <button id="deleteSubjectBtn" type="submit">Eliminar Materia</button>
+                </div>
+
+                <!-- Formulario para agregar tarea -->
+                <div class="form-container">
+                    <h2>Agregar Tarea</h2>
+                    <select id="subjectSelect">
+                        <option value="">Selecciona una materia</option>
+                    </select>
+                    <input type="text" id="taskName" placeholder="Nombre de la tarea" autocomplete="off">
+                    <input type="datetime-local" id="dueDate" placeholder="Fecha de entrega">
+                    <button id="addTaskButton" type="submit">Agregar Tarea</button>
+                    <button id="openRegister" type="submit">Agregar un Integrante</button>
+                </div>
+
+                <!-- Formulario para agregar encargado -->
+                <div class="form-container">
+                    <h2>Agregar Encargado</h2>
+                    <select id="taskSelect">
+                        <option value="">Selecciona una tarea</option>
+                    </select>
+                    <select id="chargerSelect">
+                        <option value="">Selecciona un integrante</option>
+                    </select>
+                    <textarea id="taskDetail" placeholder="Detalle de la tarea" rows="4" cols="50"></textarea>
+                    <button id="addChargerBtn" type="submit">Agregar Encargado</button>
+                </div>
+            </div>
+            <div class="form-register" id="form-register">
+                <h1>Registrar Integrantes</h1>
+                <div class="register-container">
+                    <input type="text" id="register-username" placeholder="Nombre de usuario" required autocomplete="off">
+                    <input type="email" id="register-email" placeholder="Correo electrónico" required autocomplete="off">
+                    <input type="password" id="register-password" placeholder="Contraseña" required autocomplete="off">
+                    <div class="label-container">
+                        <label><input type="checkbox" id="role-user" checked> Usuario</label>
+                        <label><input type="checkbox" id="role-admin"> Administrador</label> 
+                    </div>
+                    <div class="button-register-container">
+                        <button type="submit" id="register_save">Guardar</button>
+                        <button type="button" id="register_cancel">Cancelar</button>
+                    </div>
+                </div>          
+            </div>
+        </div>
+        <div class="admin-container">
+            <h1>Tareas designadas</h1>
+            <div class="forms-container">
+                <div class="list-container">
+
+                </div>                
+            </div>
+        </div>
+        <button id="theme-toggle" class="btn_theme">
+            <i id="theme-icon" class="fas fa-sun"></i>
+        </button>
+    </main>
+    <script>
+        function downloadFile(fileName, fileURL) {
+            console.log('Nombre del archivo:', fileName);
+            console.log('URL del archivo:', fileURL);
+
+            const a = document.createElement('a');
+            a.href = fileURL;
+            a.download = fileName; // Asegúrate de que el nombre del archivo incluya la extensión
+            a.style.display = 'none'; // Es útil para no mostrar el elemento
+            document.body.appendChild(a); // Necesario para Firefox
+            a.click();
+            document.body.removeChild(a); // Limpia el DOM después de la descarga
+        }
+
+    </script>
+    <script type="module" src="../js/admin.js"></script>
+    <script type="module" src="../js/adminfirebase.js"></script>
+</body>
+</html>

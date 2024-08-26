@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../img/logo.svg" alt="Logo">
+            </div>
+            <div class="welcome">
+                <h1>Bienvenido, <span id="username"></span></h1>
+                <button type="submit" id="logoutBtn">Salir</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="task-section">
+            <h2>Repartición de Tareas</h2>
+            <div class="task-container">
+                <div class="task-subject-container">
+                    <!-- Aquí se generará dinámicamente el contenido con JavaScript -->
+                </div>
+            </div>
+        </section>
+        <button id="theme-toggle" class="btn_theme">
+            <i id="theme-icon" class="fas fa-sun"></i>
+        </button>
+    </main>
+    <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/firebaseconect.js"></script>
+</body>
+</html>
