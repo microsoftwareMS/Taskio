@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/icono.ico" type="image/x-icon">
-    <title>Taskio - Usuario</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/icono.ico" type="image/x-icon" />
+    <title>Inicio</title>
     <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,400,0,0"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="../img/logo.svg" alt="Logo">
-            </div>
-            <div class="welcome">
-                <h1>Bienvenido, <span id="username"></span></h1>
-                <button type="submit" id="logoutBtn">Salir</button>
-            </div>
+      <div class="header-container">
+        <div class="logo">
+          <img src="../img/logo.svg" alt="Logo" />
         </div>
+        <div class="welcome">
+          <h1>Bienvenido, <span id="username"></span></h1>
+          <button type="submit" id="logoutBtn">Salir</button>
+        </div>
+      </div>
     </header>
     <main>
-        <section class="task-section">
-            <h2>Repartición de Tareas</h2>
-            <div class="task-container">
-                <div class="task-subject-container">
-                    <!-- Aquí se generará dinámicamente el contenido con JavaScript -->
-                </div>
+      <section class="subject-section">
+        <h2>Repartición de Tareas</h2>
+        <div class="subject-container">
+          <!-- Aquí se generará dinámicamente el contenido con JavaScript -->
+        </div>
+
+        <div class="subjects-details__container" id="idSubject__details">
+          <div class="subjects-details__content"></div>
+
+          <div class="companions-task__container" id="companions-container">
+            <div class="companions-task-title">
+              <h1>Partes de mis compañeros</h1>
+              <i
+                class="material-symbols-rounded closeCompapanions"
+                id="close-companions__task"
+                >close</i
+              >
             </div>
-        </section>
-        <button id="theme-toggle" class="btn_theme">
-            <i id="theme-icon" class="fas fa-sun"></i>
-        </button>
+            <div
+              class="companions-task__content"
+              id="companions-task-content"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <button id="theme-toggle" class="btn_theme">
+        <i id="theme-icon" class="fas fa-sun"></i>
+      </button>
     </main>
     <script>
-        window.onload = function() {
-            // Verifica si la bandera está establecida
-            if (sessionStorage.getItem('hasVisitedIndex') === 'true') {
-            } else {
-                // Redirige a index.html si no se ha visitado la página de inicio
-                window.location.href = '../index.html';
-            }
-        };
+      window.onload = function () {
+        // Verifica si la bandera está establecida
+        if (sessionStorage.getItem("hasVisitedIndex") === "true") {
+        } else {
+          // Redirige a index.html si no se ha visitado la página de inicio
+          window.location.href = "../index.html";
+        }
+      };
     </script>
     <script type="module" src="../js/firebaseconect.js"></script>
-</body>
+  </body>
 </html>
