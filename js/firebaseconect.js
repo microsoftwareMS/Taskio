@@ -237,6 +237,9 @@ async function printTaskStatusByUser(userIdOrName) {
         const subjectData = subjectsData[subjectId];
         const tasks = subjectData.tasks ? Object.values(subjectData.tasks) : [];
 
+        // Ordenar las tareas por fecha de entrega (de la más reciente a la más antigua)
+        tasks.sort((a, b) => new Date(b.dueDate) - new Date(a.dueDate));
+
         let tasksHTML = "";
 
         tasks.forEach((task) => {
