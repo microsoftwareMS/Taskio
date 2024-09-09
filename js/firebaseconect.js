@@ -459,15 +459,15 @@ async function addTaskDetailsEventListeners() {
               if (userTask.state === "Entregado") {
                 stateElement.style.backgroundColor = "green";
                 stateElement.style.color = "white"; // Opcional: color del texto
-                button_block.disabled = true;
-                button_upload1.disabled = true;
-                button_block.style.display = "none";
-                button_upload1.style.display = "none";
+                button_block.disabled = false;
+                button_upload1.disabled = false;
+                textCorrection.textContent = "Actualizar Tarea Entregada";
+                button_block.textContent = "Actualizar Tarea";
               } else if (userTask.state === "Necesita Corrección") {
                 stateElement.style.backgroundColor = "orange";
                 stateElement.style.color = "white"; // Opcional: color del texto
                 textDescription.textContent = "Comentario:";
-                textCorrection.textContent = "Actualizar Tarea";
+                textCorrection.textContent = "Entregar Tarea Corregida";
                 button_block.textContent = "Actualizar Tarea";
               } else if (userTask.state === "No Entregado") {
                 stateElement.style.backgroundColor = "red";
