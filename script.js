@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingDiv = document.getElementById('floating-div');
     const floatingShadow = document.querySelector('.floating-shadow'); // Selecciona el div flotante con la clase floating-shadow
 
+     // Cambiar el tema cuando se haga clic en el botón
+    themeToggleBtn.addEventListener("click", () => {
+        console.log("Botón presionado"); // Verifica si el clic se detecta
+        const isDarkMode = body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        themeIcon.classList.toggle("fa-moon", isDarkMode);
+        themeIcon.classList.toggle("fa-sun", !isDarkMode);
+
+        // Actualizar el fondo de los elementos 'in-charger'
+        const inChargerElements = document.querySelectorAll(".in-charger");
+        inChargerElements.forEach((inChargerDiv) => {
+        const handInHomeworkDiv = inChargerDiv.querySelector(".hand-in-homework");
+        const bgColor =
+            handInHomeworkDiv && handInHomeworkDiv.style.display === "block"
+            ? isDarkMode
+                ? "#111111"
+                : "#e0e0e0"
+            : "";
+        inChargerDiv.style.backgroundColor = bgColor;
+        });
+    });
+
     // Verifica el tema guardado en el localStorage
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
